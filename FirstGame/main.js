@@ -25,7 +25,7 @@ var cursors;
 var score = 0;
 var gameOver = false;
 var scoreText;
-var issou;
+var issou,russia;
 
 var game = new Phaser.Game(config);
 
@@ -37,6 +37,7 @@ function preload ()
     this.load.image('bomb', 'assets/bomb.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
     this.load.audio('issou', 'assets/issou.ogg');
+    this.load.audio('russia', 'assets/russia.ogg');
 }
 
 function create ()
@@ -44,6 +45,7 @@ function create ()
 
     //add issou sound
       issou= this.sound.add('issou');
+      russia= this.sound.add('russia');
 
     //  A simple background for our game
     this.add.image(400, 300, 'sky');
@@ -195,6 +197,7 @@ function hitBomb (player, bomb)
 
     player.anims.play('turn');
     issou.stop()
-
+    this.add.text(config.width/2-32*6, config.height/2, 'Game Over', { fontSize: '32px', fill: '#FF0023' });
+    russia.play()
     gameOver = true;
 }
