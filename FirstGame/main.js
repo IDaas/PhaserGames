@@ -6,7 +6,7 @@ var config = {
     physics: {
         default: 'arcade',
         arcade: {
-            gravity: { y: 300 },
+            gravity: { y: 900 },
             debug: false
         }
     },
@@ -35,7 +35,7 @@ function preload ()
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
-    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
+    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 37 });
     this.load.audio('issou', 'assets/issou.ogg');
     this.load.audio('russia', 'assets/russia.ogg');
 }
@@ -152,7 +152,7 @@ function update ()
 
     if (cursors.up.isDown && (player.body.touching.down || player.body.blocked.right || player.body.blocked.left))
     {
-        player.setVelocityY(-330);
+        player.setVelocityY(-500);
     }
 
     if(cursors.down.isDown){
