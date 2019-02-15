@@ -35,7 +35,7 @@ function preload ()
     this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
-    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 37 });
+    this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 20, frameHeight: 37 });
     this.load.audio('issou', 'assets/issou.ogg');
     this.load.audio('russia', 'assets/russia.ogg');
 }
